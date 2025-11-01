@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+:root {
+  --cor-fundo: hsl(284, 85%, 3%);
+  --cor-principal-G: #cf1334;
+  --cor-principal-M: #008521;
+  --cor-secundaria: #ffffff;
+  --cor-texto: #09010c;
+  --tamanho-perfil: 300px;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--cor-fundo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.container {
+  min-height: 110vh;
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--cor-fundo);
+  text-align: center;
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+}
+
+/* CARD */
+.card {
+  width: 20vw;
+  max-width: 400px;
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  color: var(--cor-secundaria);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 5vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.card-content {
+  padding: 16px;
+  overflow: hidden;
+  max-height: 100px;
+  transition: max-height 0.5s ease;
+}
+
+.extra-info {
+  margin-top: 1vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover .card-content {
+  max-height: 500px; /* Conteúdo extra aparece */
+}
+
+.card:hover .extra-info {
+  opacity: 1;
+}
+
+/* CORES ESPECÍFICAS */
+#card-M {
+  border: 1px solid var(--cor-principal-M);
+  box-shadow: 0 8px 20px var(--cor-principal-M);
+}
+
+#card-M img {
+
+  border-bottom: 1px solid var(--cor-principal-M);
+  box-shadow: 0 5px 25px var(--cor-principal-M);
+}
+
+#card-G {
+  border: 1px solid var(--cor-principal-G);
+  box-shadow: 0 8px 20px var(--cor-principal-G);
+}
+
+#card-G img {
+  border-bottom: 1px solid var(--cor-principal-G);
+  box-shadow: 0 5px 25px var(--cor-principal-G);
+}
+
+/* TITULOS */
+.card h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.card p {
+  font-size: 0.9em;
+  margin: 8px 0;
+  opacity: 0.9;
+}
+
+.card #info-princ {
+
+  margin-bottom: 5vh;
+}
+
+/* BOTÕES */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#btn-M {
+  background-color: var(--cor-principal-M);
+}
+
+#btn-M:hover {
+  background-color: #008521;
+  transform: scale(1.1);
+}
+
+#btn-G {
+  background-color: var(--cor-principal-G);
+}
+
+#btn-G:hover {
+  background-color: #aa102c;
+  transform: scale(1.1);
+}
+
+/* TITULOS COLORIDOS */
+.tit-M {
+  color: var(--cor-principal-M);
+}
+
+.tit-M:hover {
+  color: #008521;
+  font-size: 1.1em;
+  transition: color 0.2s, font-size 0.2s;
+}
+
+.tit-G {
+  color: var(--cor-principal-G);
+}
+
+.tit-G:hover {
+  color: #e02d4e;
+  font-size: 1em;
+  transition: color 0.2s, font-size 0.2s;
+}
+
+/* TABLETS */
+@media (max-width: 1024px) {
+  .container {
+    gap: 40px;
+    padding: 8vh 4vw;
+  }
+
+  .card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* CELULARES */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 10vh;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .extra-info {
+    opacity: 1;
+  }
+
+  .card-content {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.85em;
+  }
+}
