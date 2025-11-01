@@ -18,5 +18,5 @@ Botões estilizados com efeitos de hover (mudança de cor e leve aumento).
 
 Transições suaves para transformações, opacidade e expansão de conteúdo.
 
-
+LINK relatório:https://docs.google.com/document/d/1a5TL--4pFGKGeqFcDWBTVtk5I6bt5chr1G33Kns_PK0/edit?usp=sharing  
 LINK github pages:
